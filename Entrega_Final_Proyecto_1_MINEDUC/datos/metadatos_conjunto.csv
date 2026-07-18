@@ -1,0 +1,16 @@
+﻿CAMPO,VALOR
+TITULO,Establecimientos educativos de Guatemala con nivel Diversificado
+UNIDAD_OBSERVACION,Código de servicio educativo autorizado
+FUENTE,MINEDUC - Búsqueda de centros educativos autorizados
+FUENTE_URL,http://www.mineduc.gob.gt/BUSCAESTABLECIMIENTO_GE/
+FECHA_EXTRACCION,2026-07-10
+NOTA_FECHA_EXTRACCION,Fecha del archivo crudo preservado; la hora exacta no estaba incorporada en el CSV.
+FECHA_PROCESAMIENTO,2026-07-17
+VERSION,2.0.0
+FILAS_CRUDAS,11603
+VARIABLES_CRUDAS,17
+FILAS_LIMPIAS,11603
+VARIABLES_LIMPIAS,59
+SHA256_CRUDO,e7b9f1056e17fdf7eb994b8dc584f22671cdd3e78c388c85b2f547a2bae033af
+COBERTURA_TERRITORIAL,23 orígenes MINEDUC; 22 departamentos analíticos; 334 códigos municipales observados; 22 zonas capitalinas.
+REFERENCIA_TERRITORIAL,https://datos.segeplan.gob.gt/es/dataset/calculo-matematico-para-la-asignacion-constitucional-a-las-municipalidades-2026

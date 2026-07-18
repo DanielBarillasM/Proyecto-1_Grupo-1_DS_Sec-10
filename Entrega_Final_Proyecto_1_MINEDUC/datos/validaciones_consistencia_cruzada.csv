@@ -1,0 +1,8 @@
+﻿VALIDACION_ID,VALIDACION,INCONSISTENCIAS,CUMPLE
+CV01,Prefijo departamental de CODIGO coincide con departamento,0,True
+CV02,Prefijo municipal de CODIGO coincide con MUNICIPIO_COD_FUENTE,0,True
+CV03,Ciudad Capital coincide con categoría de origen,0,True
+CV04,Zona capital solo informada para Ciudad Capital,0,True
+CV05,AREA_INFORMADA coincide con AREA_LIMPIA,0,True
+CV06,JORNADA_INFORMADA coincide con JORNADA_LIMPIA,0,True
+CV07,TELEFONO_PRINCIPAL es coherente con TELEFONO_ESTADO,0,True

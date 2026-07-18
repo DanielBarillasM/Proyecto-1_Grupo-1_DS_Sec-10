@@ -1,0 +1,18 @@
+﻿Variable,Problema detectado,Transformación,Registros afectados,Justificación
+CODIGO,Sin problemas de integridad; riesgo de perder ceros si se importa como número.,"Conservar como string, aplicar trim y validar ##-##-####-46.",0,El patrón es estable y la unicidad puede probarse.
+DISTRITO,Vacíos y valores incompletos que no cumplen ##-### o ##-##-####.,Conservar original; usar null en DISTRITO_LIMPIO cuando no sea completo y clasificar estado.,591,Evita inventar componentes y separa validez de ausencia.
+DEPARTAMENTO,Ciudad Capital aparece como origen separado del departamento Guatemala.,Crear DEPARTAMENTO_LIMPIO y DEPARTAMENTO_ANALISIS; codificar 22 departamentos.,11603,Preserva la procedencia y evita doble conteo territorial.
+MUNICIPIO,Mezcla municipios con zonas capitalinas y carece de código explícito.,"Normalizar ortografía, distinguir tipo de ubicación y derivar código desde CODIGO fuera de la capital.",11603,La regla está respaldada por la estructura del identificador y el origen.
+ESTABLECIMIENTO,"Mayúsculas, tildes omitidas, espacios/puntuación y nombres iguales o similares.","Unicode NFC, espacios, capitalización española, tildes respaldadas, original permanente y detección de candidatos.",11591,Produce texto utilizable sin sustituir nombres por similitud.
+DIRECCION,"Espacios, puntuación, abreviaturas y valores vacíos.",Normalización mecánica conservadora; null solo si no hay contenido utilizable.,11599,Mejora legibilidad sin geocodificar ni inventar datos.
+TELEFONO,"Vacíos, separadores múltiples, prefijo 502 y formatos no interpretables.",Extraer bloques válidos de ocho dígitos; formato ####-####; null si no es interpretable; conservar original y estado.,11600,Permite validación automática y no inventa dígitos.
+SUPERVISOR,"Vacíos, mayúsculas y presentación inconsistente.",Normalización conservadora y null para ausencia real; conservar original.,11600,Facilita informes sin crear identidades de persona.
+DIRECTOR,"Alta ausencia, marcadores y presentación inconsistente.","Marcadores/vacíos a null, estado de ausencia y normalización conservadora.",11596,El null tiene significado y no se imputa un nombre.
+NIVEL,Etiqueta en mayúsculas; dominio esperado único.,Mapear a Diversificado y validar dominio.,11603,La consulta se restringe al nivel solicitado.
+SECTOR,Categoría nominal en mayúsculas.,"Etiquetas legibles, catálogo cerrado y código nominal.",11603,Evita variantes posteriores y mantiene interpretación.
+AREA,SIN ESPECIFICAR no es una tercera área real.,"Urbana/Rural; SIN ESPECIFICAR a null, con original e indicador.",11603,Representa correctamente la ausencia semántica.
+STATUS,Mayúsculas y tildes omitidas en categorías.,"Normalizar etiquetas, validar catálogo y asignar código nominal.",11603,Un catálogo cerrado evita variantes ortográficas.
+MODALIDAD,MONOLINGUE/BILINGUE sin diéresis o tilde.,Corregir a Monolingüe/Bilingüe y codificar nominalmente.,11603,Restituye ortografía española sin cambiar significado.
+JORNADA,SIN JORNADA es ausencia semántica.,"Jornadas reales en JORNADA_LIMPIA; SIN JORNADA a null, con indicador y original.",11603,Evita tratar ausencia como categoría sustantiva.
+PLAN,"Mayúsculas, puntuación compacta y tildes.","Catálogo explícito, etiqueta legible y código nominal.",11603,Controla todas las variantes del dominio observado.
+DEPARTAMENTAL,"Mayúsculas, nombres territoriales y tildes.",Normalización ortográfica conservadora y código nominal.,11603,Facilita agrupación manteniendo el texto original.

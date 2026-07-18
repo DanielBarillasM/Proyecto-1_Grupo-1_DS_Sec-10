@@ -1,18 +1,23 @@
 ﻿CONTROL_ID,CONTROL,CUMPLE,ESPERADO,OBSERVADO
 QC01,Filas conservadas,True,11603,11603
 QC02,CODIGO único,True,11603,11603
-QC03,CODIGO con patrón,True,11603,11603
-QC04,Duplicados exactos crudos,True,0,0
-QC05,Categorías de origen,True,23,23
-QC06,Departamentos analíticos,True,22,22
-QC07,Filas Ciudad Capital,True,2161,2161
-QC08,Null en DISTRITO_LIMPIO,True,591,591
-QC09,Null en ESTABLECIMIENTO_LIMPIO,True,5,5
-QC10,Null en DIRECCION_LIMPIA,True,87,87
-QC11,Null en TELEFONO_LIMPIO,True,933,933
-QC12,Null en SUPERVISOR_LIMPIO,True,525,525
-QC13,Null en DIRECTOR_LIMPIO,True,2106,2106
-QC14,Null en AREA_LIMPIA,True,3,3
-QC15,Null en JORNADA_LIMPIA,True,1072,1072
-QC16,Códigos sector completos,True,0,0
-QC17,Códigos status completos,True,0,0
+QC03,CODIGO cumple patrón,True,0,0
+QC04,Duplicados exactos finales,True,0,0
+QC05,Sin espacios iniciales/finales en textos limpios,True,0,0
+QC06,Teléfonos limpios con formato consistente,True,0,0
+QC07,Departamentos pertenecen al catálogo de 22,True,22,22
+QC08,Municipios y códigos pertenecen al catálogo observado,True,334,334
+QC09,Tipos de variables codificadas según esquema,True,0,0
+QC10,Sin variantes duplicadas de categorías,True,0,0
+QC11,Sin categorías fuera de dominios limpios,True,0,0
+QC12,Controles de consistencia cruzada,True,0,0
+QC13,Ciudad Capital coincide con origen,True,0,0
+QC14,Zona solo informada en Ciudad Capital,True,0,0
+QC15,AREA_INFORMADA coherente,True,0,0
+QC16,JORNADA_INFORMADA coherente,True,0,0
+QC17,Originales preservados,True,16,16
+QC18,Todos los candidatos tienen decisión,True,13031,13031
+QC19,Duplicados parciales no eliminados automáticamente,True,0,0
+QC20,Libro de códigos cubre el dataset,True,59,59
+QC21,Metadatos completos en todas las filas,True,11603,11603
+QC22,Snapshot crudo conserva huella SHA-256,True,e7b9f1056e17,e7b9f1056e17

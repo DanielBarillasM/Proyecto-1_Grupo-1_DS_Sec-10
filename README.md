@@ -1,64 +1,63 @@
-# Entrega final · Proyecto 1 · Obtención y limpieza de datos
+# Entrega final 2026 · Proyecto 1 · Obtención y limpieza de datos
 
 ## Descripción
 
-Esta entrega documenta y ejecuta la obtención, el diagnóstico, la limpieza, la integración nacional y la documentación de los datos de establecimientos educativos autorizados por el MINEDUC para el nivel Diversificado.
+Esta entrega reproduce el diagnóstico, la limpieza, la integración nacional, el control de calidad y la documentación de los establecimientos educativos autorizados por el MINEDUC para el nivel Diversificado.
 
-Fuente declarada: <http://www.mineduc.gob.gt/BUSCAESTABLECIMIENTO_GE/>
+- Fuente: <http://www.mineduc.gob.gt/BUSCAESTABLECIMIENTO_GE/>
+- Fecha documentada del snapshot crudo: **2026-07-10**
+- Fecha de procesamiento final: **2026-07-17**
+- Versión del conjunto limpio: **2.0.0**
+- Curso: **CC3084 – Data Science · Semestre II 2026**
 
-Fecha de procesamiento reproducible: **16 de julio de 2026**.
+## Resultados verificados
 
-## Resultados principales
-
-- Conjunto crudo: **11,603 filas × 17 variables**.
-- Conjunto limpio completo: **11,603 filas × 56 variables**.
-- Vista analítica: **11,603 filas × 39 variables**.
+- Datos crudos: **11,603 filas × 17 variables**.
+- Datos limpios completos: **11,603 filas × 59 variables**.
+- Vista analítica: **11,603 filas × 42 variables**.
 - Códigos únicos: **11,603**.
-- Duplicados exactos crudos: **0**.
-- Filas eliminadas: **0**.
-- Categorías geográficas de origen: **23**.
-- Departamentos analíticos: **22**.
-- Registros de Ciudad Capital: **2,161**.
-- Controles aprobados: **17 de 17**.
+- Duplicados exactos: **0**.
+- Pares candidatos a duplicado parcial: **13,031**, todos con decisión documentada.
+- Revisión manual recomendada: **2,063 pares**.
+- Filas eliminadas automáticamente: **0**.
+- Controles automáticos aprobados: **22/22**.
+- Validaciones cruzadas aprobadas: **7/7**.
+- Catálogo observado: **334 códigos municipales y 22 zonas capitalinas**. La referencia nacional SEGEPLAN 2026 informa 340 municipios.
+
+El incremento de faltantes analíticos de 5,253 a 5,426 celdas es intencional: 69 distritos incompletos y 104 teléfonos no interpretables dejan de aparentar validez. Sus valores originales permanecen en las columnas `*_ORIGINAL`.
 
 ## Archivos principales
 
-- `Proyecto_1_MINEDUC_Final_Ejecutado.ipynb`: notebook ejecutado de principio a fin, con Markdown HTML, salidas HTML, fórmulas MathJax, tablas, gráficos, interpretación y limitaciones.
-- `Informe_Final_Proyecto_1_MINEDUC.docx` y `.pdf`: informe formal completo.
-- `Libro_de_Codigos_MINEDUC.docx` y `.pdf`: descripción general, diccionario de las 56 variables y catálogos.
-- `Proyecto_1_MINEDUC_Datos_Libro_Codigos.xlsx`: panel de resultados, datos analíticos, diagnóstico, reglas, controles, manifiesto y catálogos.
-- `datos/establecimientos_diversificado_limpio.csv`: conjunto nacional completo y trazable.
-- `datos/establecimientos_diversificado_limpio_analitico.csv`: subconjunto práctico para análisis en Excel.
-- `datos/datos_crudos_establecimientos_diversificado.csv`: consolidado crudo preservado.
-- `datos/bitacora_cambios_detalle.csv`: cambios por código y variable.
-- `datos/bitacora_reglas_resumen.csv`: reglas, razones, riesgos, controles y filas afectadas.
-- `datos/catalogos_codificacion.csv`: códigos nominales y etiquetas.
-- `datos/controles_calidad.csv`: 17 pruebas de calidad.
-- `datos/perfil_datos_crudos.csv`: diagnóstico cuantitativo de las 17 variables iniciales.
-- `datos_crudos_por_origen/`: 23 particiones auditables derivadas del consolidado crudo.
+- `codigo/Proyecto_1_MINEDUC_2026_Final_Ejecutado.ipynb`: notebook autocontenido, ejecutado, sin errores y con salidas HTML/MathJax.
+- `documentacion/Informe_Final_Proyecto_1_MINEDUC.docx` y `.pdf`: informe formal de 22 páginas.
+- `documentacion/Libro_de_Codigos_MINEDUC.docx`, `.pdf` y `.md`: descripción de las 59 variables, dominios, tratamientos, derivaciones, fuente, fecha y versión.
+- `documentacion/Proyecto_1_MINEDUC_2026_Datos_Libro_Codigos.xlsx`: panel, muestra analítica de 3,000 filas, diagnóstico, plan, transformaciones, controles, catálogos y metadatos. Los CSV adjuntos contienen todos los registros y detalles.
+- `datos/establecimientos_diversificado_limpio.csv`: conjunto nacional completo de 11,603 × 59.
+- `datos/establecimientos_diversificado_limpio_analitico.csv`: vista analítica completa de 11,603 × 42.
+- `datos/datos_crudos_establecimientos_diversificado.csv`: snapshot crudo preservado byte a byte.
+- `datos/bitacora_cambios_detalle.csv`: 174,607 cambios por código y variable.
+- `datos/candidatos_duplicados_parciales.csv`: evidencia y decisión para 13,031 pares.
+- `datos/resumen_transformaciones.csv`: tabla de cinco columnas exigida por la guía.
+- `datos/calidad_antes_despues.csv`: comparación de doce métricas.
+- `datos/controles_calidad.csv`: 22 pruebas automáticas.
+- `datos/validaciones_consistencia_cruzada.csv`: siete pruebas entre variables.
+- `datos/catalogo_territorial_observado.csv`: catálogo territorial del universo consultado.
+- `datos/libro_codigos.csv`: versión tabular del libro de códigos.
 
-## Cómo reproducir
+## Reproducción
 
-1. Instalar Python 3.11 o posterior y las dependencias indicadas en `requirements.txt`.
-2. Colocar `Proyecto_1_MINEDUC_Final_Ejecutado.ipynb` y el CSV crudo en la misma carpeta.
-3. Abrir el notebook con JupyterLab o Jupyter Notebook.
-4. Ejecutar **Restart Kernel and Run All Cells**.
-5. Confirmar que la sección de control muestre **17/17** y que no exista ninguna salida de error.
+1. Instalar Python 3.11 o posterior.
+2. Ejecutar `pip install -r requirements.txt`.
+3. Colocar el notebook y `datos_crudos_establecimientos_diversificado.csv` en la misma carpeta.
+4. Abrir `Proyecto_1_MINEDUC_2026_Final_Ejecutado.ipynb`.
+5. Ejecutar **Restart Kernel and Run All Cells**.
+6. Confirmar **22/22 controles**, **7/7 validaciones cruzadas** y ausencia de salidas de error.
 
-El notebook busca primero el archivo `datos_crudos_establecimientos_diversificado.csv`. Si no se encuentra junto al cuaderno, utiliza la copia incluida en `salidas_proyecto_1/datos/`.
+## Convenciones
 
-## Convenciones de limpieza
-
-- Las columnas `*_ORIGINAL` preservan la fuente.
-- Las columnas `*_LIMPIO` contienen una presentación apta para análisis e informes.
-- Las columnas `*_COD` son códigos nominales, salvo los códigos territoriales documentados.
-- Las columnas `*_ESTADO` y `*_INFORMADA` explican calidad o ausencia.
-- `null` se usa solamente cuando existe ausencia real o semántica; no se imputan nombres, teléfonos, distritos ni jornadas.
-- `SIN JORNADA` y `SIN ESPECIFICAR` se conservan en la columna original y se representan como `null` en la columna analítica.
-- Ciudad Capital se mantiene como origen y como grupo de ubicación, pero se integra a Guatemala en `DEPARTAMENTO_ANALISIS`.
-- Los nombres no se deduplican por similitud. `CODIGO` es la llave de cada servicio.
-
-## Precauciones de interpretación
-
-Cada fila representa un código de servicio educativo autorizado, no necesariamente un edificio físico único. Las correcciones ortográficas son conservadoras y trazables; para usos legales o administrativos debe contrastarse el nombre con la fuente oficial y consultarse la columna original.
-
+- `*_ORIGINAL`: valor publicado, sin sobrescritura.
+- `*_LIMPIO` / `*_LIMPIA`: presentación analítica.
+- `*_COD`: código nominal, salvo los territoriales documentados.
+- `*_ESTADO` / `*_INFORMADA`: calidad, interpretación o ausencia.
+- `null`: ausencia técnica o semántica documentada; nunca una imputación arbitraria.
+- `CODIGO`: llave del servicio autorizado.
