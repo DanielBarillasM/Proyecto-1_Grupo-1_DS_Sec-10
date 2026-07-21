@@ -1,0 +1,57 @@
+﻿VARIABLE,DESCRIPCION,TIPO,ADMITE_NULL,DOMINIO_VALORES,ORIGEN_REGLA,EJEMPLO
+CODIGO,Identificador textual único del servicio educativo autorizado.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,16-01-0137-46
+DISTRITO_ORIGINAL,Valor original: Código de distrito o supervisión educativa publicado por la fuente.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,16-006
+DISTRITO_LIMPIO,Distrito completo; null cuando la fuente está vacía o incompleta.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,16-006
+DISTRITO_ESTADO,"Clasificación de completitud del distrito: Válido, Vacío o Incompleto.",string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Válido
+DEPARTAMENTO_ORIGINAL,Valor original: Categoría territorial de origen utilizada por el portal.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,ALTA VERAPAZ
+DEPARTAMENTO_LIMPIO,Categoría de origen con presentación ortográfica.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Alta Verapaz
+DEPARTAMENTO_ANALISIS,Departamento analítico de 22 categorías; Ciudad Capital se agrega a Guatemala.,string,No,22 departamentos de Guatemala.,Derivación documentada,Alta Verapaz
+DEPARTAMENTO_ANALISIS_COD,Código territorial de dos dígitos del departamento analítico.,string,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,16
+MUNICIPIO_ORIGINAL,Valor original: Municipio o zona de Ciudad Capital publicado por el portal.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,COBAN
+MUNICIPIO_LIMPIO,Municipio o zona con presentación normalizada.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Cobán
+UBICACION_GRUPO,Distingue Ciudad Capital de otros municipios.,string,No,Ciudad Capital; Otros municipios.,Derivación documentada,Otros municipios
+TIPO_UBICACION,Indica si la etiqueta territorial es Zona capital o Municipio.,string,No,Zona capital; Municipio.,Derivación documentada,Municipio
+ES_CIUDAD_CAPITAL,Indicador binario: 1 para Ciudad Capital y 0 para otros municipios.,Int8,No,0 = No; 1 = Sí.,Derivación documentada,0
+ZONA_CAPITAL_COD,Número de zona de Ciudad Capital; null fuera de la capital.,Int8,Sí,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+MUNICIPIO_COD_FUENTE,Prefijo departamento-municipio del CODIGO; null para zonas capitalinas.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,16-01
+ESTABLECIMIENTO_ORIGINAL,Valor original: Nombre registrado del establecimiento educativo.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,INSTITUTO MIXTO NOCTURNO FRANCISCO MARROQUIN
+ESTABLECIMIENTO_LIMPIO,Nombre de presentación con ortografía conservadora y trazable.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Instituto Mixto Nocturno Francisco Marroquín
+ESTABLECIMIENTO_CLAVE_COMPARACION,Clave sin tildes ni puntuación usada solo para detectar candidatos.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,INSTITUTO MIXTO NOCTURNO FRANCISCO MARROQUIN
+DIRECCION_ORIGINAL,Valor original: Dirección textual publicada.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,6A. AVENIDA 1-15 ZONA 4
+DIRECCION_LIMPIA,Dirección de presentación; null cuando no existe contenido utilizable.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,"6A. Avenida 1-15, Zona 4"
+TELEFONO_ORIGINAL,Valor original: Uno o varios contactos telefónicos publicados.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,
+TELEFONO_LIMPIO,Texto telefónico normalizado; conserva formatos históricos no interpretables.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,7794-5104
+TELEFONO_PRINCIPAL,Primer candidato de ocho dígitos con formato ####-####.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,7794-5104
+TELEFONO_ESTADO,Estado de interpretación del teléfono.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Vacío
+SUPERVISOR_ORIGINAL,Valor original: Nombre de la persona supervisora publicada.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,JORGE EDUARDO PAQUE LAZARO
+SUPERVISOR_LIMPIO,Nombre de supervisión de presentación o null.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Jorge Eduardo Paque Lázaro
+DIRECTOR_ORIGINAL,Valor original: Nombre de la persona directora publicada.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,--
+DIRECTOR_LIMPIO,Nombre de dirección de presentación o null.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Gustavo Adolfo Sierra Pop
+DIRECTOR_ESTADO,"Informado, Vacío o Marcador.",string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Marcador
+NIVEL_ORIGINAL,Valor original: Nivel educativo consultado.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,DIVERSIFICADO
+NIVEL_LIMPIO,Nivel Diversificado con etiqueta legible.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Diversificado
+SECTOR_ORIGINAL,Valor original: Sector administrativo del servicio.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,PRIVADO
+SECTOR_LIMPIO,Etiqueta de sector legible.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Privado
+SECTOR_COD,Código nominal del sector.,Int8,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+STATUS_ORIGINAL,Valor original: Estado administrativo del servicio.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,CERRADA DEFINITIVAMENTE
+STATUS_LIMPIO,Estado administrativo con etiqueta legible.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Cerrada definitivamente
+STATUS_COD,Código nominal del estado.,Int8,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,3
+MODALIDAD_ORIGINAL,Valor original: Modalidad lingüística.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,MONOLINGUE
+MODALIDAD_LIMPIA,Modalidad con ortografía corregida.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Monolingüe
+MODALIDAD_COD,Código nominal de modalidad.,Int8,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+AREA_ORIGINAL,Valor original: Área territorial urbana o rural.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,URBANA
+AREA_LIMPIA,Urbana o Rural; null para SIN ESPECIFICAR.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Urbana
+AREA_COD,Código nominal del área.,Int8,Sí,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+AREA_INFORMADA,Indicador binario de área informada.,Int8,No,0 = No; 1 = Sí.,Derivación documentada,1
+JORNADA_ORIGINAL,Valor original: Jornada autorizada.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,NOCTURNA
+JORNADA_LIMPIA,Jornada real; null para SIN JORNADA.,string,Sí,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Nocturna
+JORNADA_COD,Código nominal de jornada real.,Int8,Sí,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,3
+JORNADA_INFORMADA,Indicador binario de jornada informada.,Int8,No,0 = No; 1 = Sí.,Derivación documentada,1
+PLAN_ORIGINAL,Valor original: Plan o modalidad temporal de atención.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,DIARIO(REGULAR)
+PLAN_LIMPIO,Plan con presentación normalizada.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Diario (regular)
+PLAN_COD,Código nominal del plan.,Int8,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+DEPARTAMENTAL_ORIGINAL,Valor original: Dirección departamental responsable.,string,No,Texto publicado por MINEDUC; se conserva sin sobrescritura.,Conservación del valor crudo,ALTA VERAPAZ
+DEPARTAMENTAL_LIMPIO,Dirección departamental con presentación ortográfica.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,Alta Verapaz
+DEPARTAMENTAL_COD,Código nominal de dirección departamental.,Int8,No,Catálogo documentado; identificador nominal salvo código territorial.,Derivación documentada,1
+FUENTE,Nombre de la fuente administrativa.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,MINEDUC - Búsqueda de centros educativos autorizados
+FECHA_PROCESAMIENTO,Fecha reproducible de esta versión final.,string,No,Véase descripción y catálogo cuando corresponda.,Derivación documentada,2026-07-16

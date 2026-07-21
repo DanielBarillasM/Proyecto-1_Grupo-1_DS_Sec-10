@@ -1,0 +1,24 @@
+﻿ORIGEN,FILAS,ARCHIVO,TIPO
+ALTA VERAPAZ,475,datos_crudos_alta_verapaz.csv,Partición del consolidado crudo
+BAJA VERAPAZ,171,datos_crudos_baja_verapaz.csv,Partición del consolidado crudo
+CHIMALTENANGO,435,datos_crudos_chimaltenango.csv,Partición del consolidado crudo
+CHIQUIMULA,239,datos_crudos_chiquimula.csv,Partición del consolidado crudo
+CIUDAD CAPITAL,2161,datos_crudos_ciudad_capital.csv,Partición del consolidado crudo
+EL PROGRESO,158,datos_crudos_el_progreso.csv,Partición del consolidado crudo
+ESCUINTLA,708,datos_crudos_escuintla.csv,Partición del consolidado crudo
+GUATEMALA,1644,datos_crudos_guatemala.csv,Partición del consolidado crudo
+HUEHUETENANGO,591,datos_crudos_huehuetenango.csv,Partición del consolidado crudo
+IZABAL,413,datos_crudos_izabal.csv,Partición del consolidado crudo
+JALAPA,183,datos_crudos_jalapa.csv,Partición del consolidado crudo
+JUTIAPA,392,datos_crudos_jutiapa.csv,Partición del consolidado crudo
+PETEN,516,datos_crudos_peten.csv,Partición del consolidado crudo
+QUETZALTENANGO,551,datos_crudos_quetzaltenango.csv,Partición del consolidado crudo
+QUICHE,322,datos_crudos_quiche.csv,Partición del consolidado crudo
+RETALHULEU,364,datos_crudos_retalhuleu.csv,Partición del consolidado crudo
+SACATEPEQUEZ,430,datos_crudos_sacatepequez.csv,Partición del consolidado crudo
+SAN MARCOS,724,datos_crudos_san_marcos.csv,Partición del consolidado crudo
+SANTA ROSA,213,datos_crudos_santa_rosa.csv,Partición del consolidado crudo
+SOLOLA,192,datos_crudos_solola.csv,Partición del consolidado crudo
+SUCHITEPEQUEZ,437,datos_crudos_suchitepequez.csv,Partición del consolidado crudo
+TOTONICAPAN,128,datos_crudos_totonicapan.csv,Partición del consolidado crudo
+ZACAPA,156,datos_crudos_zacapa.csv,Partición del consolidado crudo
