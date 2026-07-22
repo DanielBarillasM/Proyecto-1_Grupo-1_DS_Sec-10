@@ -378,6 +378,7 @@ def clave_comparacion(valor):
 
 CORRECCIONES_PALABRAS = {
     "educacion": "educación", "tecnico": "técnico", "tecnica": "técnica",
+    "policia": "policía",
     "tecnologico": "tecnológico", "tecnologica": "tecnológica",
     "computacion": "computación", "informatica": "informática",
     "administracion": "administración", "economicas": "económicas",
@@ -443,7 +444,12 @@ def capitalizacion_espanola(texto):
     base = " ".join(tokens)
     for sigla in sorted(SIGLAS, key=len, reverse=True):
         base = re.sub(rf"(?<!\w){re.escape(sigla)}(?!\w)", sigla, base, flags=re.IGNORECASE)
-    base = re.sub(r"\b([IVXLCDM]{1,6})\b", lambda m: m.group(1).upper(), base, flags=re.IGNORECASE)
+    base = re.sub(
+        r"\b(?=[MDCLXVImdclxvi])M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3})\b",
+        lambda m: m.group(0).upper(),
+        base,
+        flags=re.IGNORECASE,
+    )
     base = re.sub(r"\b(\d+)(Ra|Da|Ta)\.*", lambda m: m.group(1) + m.group(2).lower() + ".", base)
     return base
 
