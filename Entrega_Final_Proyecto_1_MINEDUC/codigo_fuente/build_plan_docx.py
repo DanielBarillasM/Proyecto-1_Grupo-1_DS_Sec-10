@@ -16,8 +16,7 @@ from docx.shared import Inches, Pt, RGBColor, Twips
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "Plan_Formal_Proyecto_1_Obtencion_y_Limpieza_MINEDUC.docx"
 
-SKILL_ROOT = Path("/root/.codex/skills/builtins/documents")
-sys.path.insert(0, str(SKILL_ROOT / "scripts"))
+sys.path.insert(0, str(ROOT))
 from table_geometry import apply_table_geometry  # noqa: E402
 
 

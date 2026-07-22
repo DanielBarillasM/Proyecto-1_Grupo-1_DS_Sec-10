@@ -275,9 +275,9 @@ def build_report() -> None:
     )
     add_body(
         doc,
-        "La ejecución conservó las 11,603 filas: CODIGO es único y no se detectaron duplicados exactos. La salida completa contiene 59 variables, incluidas columnas originales, versiones limpias, indicadores de ausencia, códigos nominales y metadatos. Se documentaron 13,031 pares candidatos a duplicado parcial sin eliminar registros automáticamente. Los 22 controles definidos finalizaron satisfactoriamente.",
+        "La ejecución conservó las 11,603 filas: CODIGO es único y no se detectaron duplicados exactos. La salida completa contiene 59 variables, incluidas columnas originales, versiones limpias, indicadores de ausencia, códigos nominales y metadatos. Se documentaron 13,031 pares candidatos a duplicado parcial sin eliminar registros automáticamente. Los 27 controles definidos finalizaron satisfactoriamente.",
     )
-    add_metric_cards(doc, [("Registros", "11,603"), ("Crudas", "17"), ("Finales", "59"), ("Eliminadas", "0"), ("Controles", "22/22")])
+    add_metric_cards(doc, [("Registros", "11,603"), ("Crudas", "17"), ("Finales", "59"), ("Eliminadas", "0"), ("Controles", "27/27")])
     add_callout(
         doc,
         "Decisión central",
@@ -307,10 +307,10 @@ def build_report() -> None:
     compliance = [
         ("Carga correcta", "Notebook ejecutado; carga string; validación de 11,603 × 17 y esquema esperado.", "Cumplido"),
         ("Análisis crudo", "Perfil por variable: tipo, únicos, faltantes técnicos/semánticos, porcentaje, dominios, formatos y duplicados.", "Cumplido"),
-        ("Limpieza y explicación", "Plan para 17 variables, bitácora por cambio, tabla de transformaciones, razones, riesgos y 22 pruebas.", "Cumplido"),
+        ("Limpieza y explicación", "Plan para 17 variables, bitácora por cambio, tabla de transformaciones, razones, riesgos y 27 pruebas.", "Cumplido"),
         ("Duplicados parciales", "TF–IDF de n-gramas, umbral 0.92, 13,031 pares, evidencia auxiliar y decisión por par; 0 eliminaciones automáticas.", "Cumplido"),
         ("Consistencia cruzada", "Siete verificaciones geográficas, de indicadores y de teléfonos, todas sin inconsistencias.", "Cumplido"),
-        ("Calidad antes/después", "Doce métricas comparables, incluidos faltantes, formatos, duplicados y celdas transformadas.", "Cumplido"),
+        ("Calidad antes/después", "Trece métricas comparables, incluidos faltantes, formatos, categorías inconsistentes, duplicados y errores corregidos.", "Cumplido"),
         ("Libro de códigos", "DOCX/PDF/Markdown y Excel con 59 variables, dominios, tratamientos, derivaciones, fecha, fuente y versión.", "Cumplido"),
         ("Conjunto limpio", "CSV nacional completo de 11,603 × 59 y vista analítica de 11,603 × 42.", "Cumplido"),
     ]
@@ -484,11 +484,11 @@ assert int(df_raw.duplicated().sum()) == 0
             "87 null en DIRECCION_LIMPIA; QC10 aprobado.",
         ),
         "TELEFONO": (
-            "933 vacíos; celdas con uno o varios números y 104 formatos no estándar.",
+            "933 vacíos; celdas con uno o varios números y 48 formatos no estándar.",
             "Tratar como texto, normalizar candidatos de ocho dígitos, extraer TELEFONO_PRINCIPAL, clasificar TELEFONO_ESTADO y dejar null en TELEFONO_LIMPIO cuando no sea interpretable.",
             "Un teléfono no es una cantidad y no debe imputarse.",
             "Un formato histórico utilizable podría no satisfacer la regla. TELEFONO_ORIGINAL y el estado conservan la evidencia.",
-            "10,444 válidos únicos, 122 múltiples, 104 no estándar, 933 vacíos y 1,037 null analíticos.",
+            "10,501 válidos únicos, 121 múltiples, 48 no estándar, 933 vacíos y 981 null analíticos.",
         ),
         "SUPERVISOR": (
             "1,268 valores únicos y 525 ausencias; nombres en mayúsculas y tildes variables.",
@@ -601,7 +601,7 @@ assert int(df_raw.duplicated().sum()) == 0
     add_table(doc, ["Métrica", "Antes", "Después", "Cambio"], quality_rows, [4960, 1400, 1500, 1500], font_size=8.0)
     add_body(
         doc,
-        "El total de null analíticos aumenta en 173 celdas (de 5,253 a 5,426). Esto no es un deterioro: 69 distritos incompletos y 104 teléfonos no interpretables dejan de aparentar ser valores válidos. Sus textos originales permanecen disponibles. A la vez, las tres variables con formatos inconsistentes quedan en cero y los 13,031 pares candidatos pasan de no tener decisión a contar con una decisión documentada.",
+        "El total de null analíticos aumenta en 117 celdas (de 5,253 a 5,370). Esto no es un deterioro: 69 distritos incompletos y 48 teléfonos no interpretables dejan de aparentar ser valores válidos. Sus textos originales permanecen disponibles. A la vez, las tres variables con formatos inconsistentes quedan en cero y los 13,031 pares candidatos pasan de no tener decisión a contar con una decisión documentada.",
     )
     add_heading(doc, "6.2 Ejemplos de transformación", 2)
     examples = [
@@ -670,7 +670,7 @@ assert int(df_raw.duplicated().sum()) == 0
     add_table(doc, ["ID", "Control", "Cumple", "Esperado", "Observado"], control_rows, [720, 4160, 1000, 1680, 1800], font_size=8.1)
     add_body(
         doc,
-        "Los 22 controles pasaron. Además, el notebook conserva sus salidas de ejecución: 15 celdas de código tienen número de ejecución consecutivo, no existen trazas de error y las tablas, decisiones y figuras corresponden a la misma corrida que generó los archivos finales.",
+        "Los 27 controles pasaron. Además, el notebook conserva sus salidas de ejecución: 18 celdas de código tienen número de ejecución consecutivo, no existen trazas de error y las tablas, decisiones y figuras corresponden a la misma corrida que generó los archivos finales.",
     )
     add_heading(doc, "8.1 Consistencia entre variables", 2)
     cross_rows = [(r.VALIDACION_ID, r.VALIDACION, fmt_int(r.INCONSISTENCIAS), "Sí" if r.CUMPLE else "No") for r in cruzadas.itertuples()]
@@ -693,7 +693,7 @@ assert validaciones_cruzadas["INCONSISTENCIAS"].eq(0).all()
         ("Proyecto_1_MINEDUC_2026_Final_Ejecutado.ipynb", "Notebook reproducible, ejecutado y con análisis 2026."),
         ("Informe_Final_Proyecto_1_MINEDUC.docx / .pdf", "Informe final formal y versión fija para entrega."),
         ("Libro_de_Codigos_MINEDUC.docx / .pdf / .md", "Descripción general, 59 variables, tratamientos, derivaciones y catálogos."),
-        ("Proyecto_1_MINEDUC_Datos_Libro_Codigos.xlsx", "Panel, datos analíticos, diagnóstico, reglas, catálogos y controles."),
+        ("Proyecto_1_MINEDUC_2026_Datos_Libro_Codigos.xlsx", "Panel, datos analíticos, diagnóstico, reglas, catálogos y controles."),
         ("establecimientos_diversificado_limpio.csv", "Conjunto nacional completo de 11,603 × 59."),
         ("establecimientos_diversificado_limpio_analitico.csv", "Vista de 11,603 × 42 para uso práctico."),
         ("datos_crudos_establecimientos_diversificado.csv", "Consolidado crudo inalterado."),
@@ -711,7 +711,7 @@ assert validaciones_cruzadas["INCONSISTENCIAS"].eq(0).all()
         "El archivo representa códigos de servicio educativo y no necesariamente planteles físicos únicos.",
         "Las cifras describen el estado de la fuente en la fecha de procesamiento; el portal puede cambiar posteriormente.",
         "No se imputaron nombres, teléfonos, distritos ni jornadas sin evidencia; null conserva la ausencia.",
-        "Los 104 teléfonos no estándar quedan como null analítico y requieren revisión manual o contraste con una fuente oficial; el valor original no se pierde.",
+        "Los 48 teléfonos no estándar quedan como null analítico y requieren revisión manual o contraste con una fuente oficial; el valor original no se pierde.",
         "El catálogo territorial observado cubre 334 de los 340 municipios nacionales reportados por SEGEPLAN; los otros seis no aparecen con Diversificado en este snapshot.",
         "Se recomiendan 2,063 revisiones manuales entre los pares parciales; no se efectuaron fusiones sin evidencia oficial.",
         "La normalización ortográfica mejora presentación, pero un nombre propio crítico debe verificarse contra el registro oficial antes de uso legal.",
