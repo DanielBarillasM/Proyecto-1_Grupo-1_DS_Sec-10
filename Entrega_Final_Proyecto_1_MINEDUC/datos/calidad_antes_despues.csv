@@ -1,8 +1,8 @@
 ﻿METRICA,ANTES,DESPUES,CAMBIO
 Registros,11603.0,11603.0,0.0
 Variables,17.0,59.0,42.0
-Valores faltantes en 17 variables comparables,5253.0,5426.0,173.0
-Porcentaje faltante en 17 variables comparables,2.6631,2.7508,0.0877
+Valores faltantes en 17 variables comparables,5253.0,5370.0,117.0
+Porcentaje faltante en 17 variables comparables,2.6631,2.7224,0.0593
 Variables con al menos un faltante,8.0,8.0,0.0
 Duplicados exactos,0.0,0.0,0.0
 Posibles duplicados parciales (pares),13031.0,13031.0,0.0
@@ -10,4 +10,5 @@ Pares candidatos sin decisión documentada,13031.0,0.0,-13031.0
 Variables con formato inconsistente,3.0,0.0,-3.0
 Variables con tipo incorrecto según esquema,0.0,0.0,0.0
 Variables con categorías fuera de catálogo,0.0,0.0,0.0
-Celdas transformadas y documentadas,0.0,174607.0,174607.0
+Categorías inconsistentes,0.0,0.0,0.0
+Errores corregidos,0.0,174608.0,174608.0

@@ -7,7 +7,7 @@ ESTABLECIMIENTO,"Mayúsculas, tildes omitidas, espacios/puntuación y nombres ig
 DIRECCION,"Espacios, puntuación, abreviaturas y valores vacíos.",Normalización mecánica conservadora; null solo si no hay contenido utilizable.,11599,Mejora legibilidad sin geocodificar ni inventar datos.
 TELEFONO,"Vacíos, separadores múltiples, prefijo 502 y formatos no interpretables.",Extraer bloques válidos de ocho dígitos; formato ####-####; null si no es interpretable; conservar original y estado.,11600,Permite validación automática y no inventa dígitos.
 SUPERVISOR,"Vacíos, mayúsculas y presentación inconsistente.",Normalización conservadora y null para ausencia real; conservar original.,11600,Facilita informes sin crear identidades de persona.
-DIRECTOR,"Alta ausencia, marcadores y presentación inconsistente.","Marcadores/vacíos a null, estado de ausencia y normalización conservadora.",11596,El null tiene significado y no se imputa un nombre.
+DIRECTOR,"Alta ausencia, marcadores y presentación inconsistente.","Marcadores/vacíos a null, estado de ausencia y normalización conservadora.",11597,El null tiene significado y no se imputa un nombre.
 NIVEL,Etiqueta en mayúsculas; dominio esperado único.,Mapear a Diversificado y validar dominio.,11603,La consulta se restringe al nivel solicitado.
 SECTOR,Categoría nominal en mayúsculas.,"Etiquetas legibles, catálogo cerrado y código nominal.",11603,Evita variantes posteriores y mantiene interpretación.
 AREA,SIN ESPECIFICAR no es una tercera área real.,"Urbana/Rural; SIN ESPECIFICAR a null, con original e indicador.",11603,Representa correctamente la ausencia semántica.

@@ -21,3 +21,8 @@ QC19,Duplicados parciales no eliminados automáticamente,True,0,0
 QC20,Libro de códigos cubre el dataset,True,59,59
 QC21,Metadatos completos en todas las filas,True,11603,11603
 QC22,Snapshot crudo conserva huella SHA-256,True,e7b9f1056e17,e7b9f1056e17
+QC23,Código coincide con departamento,True,0,0
+QC24,Municipio coincide con departamento,True,0,0
+QC25,Zona solo en Ciudad Capital,True,0,0
+QC26,Etiquetas y códigos consistentes,True,0,0
+QC27,Indicadores consistentes,True,0,0
