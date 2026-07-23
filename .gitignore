@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Salida local de los notebooks del proyecto (no es un entregable oficial;
+# los entregables viven en Entrega_Final_Proyecto_1_MINEDUC/{datos,resultados,documentacion}/)
+Entrega_Final_Proyecto_1_MINEDUC/codigo/salidas_proyecto_1/
+Entrega_Final_Proyecto_1_MINEDUC/codigo/salidas_proyecto_1_2026/
+Entrega_Final_Proyecto_1_MINEDUC/codigo_fuente/salidas_proyecto_1_2026/
